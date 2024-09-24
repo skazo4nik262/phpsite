@@ -44,7 +44,7 @@ function getArticleById(int $id):array
     if (array_key_exists($id, $articleList)) {
         $curentArticle = $articleList[$id];
     }
-    //dd($curentArticle);
+
     return $curentArticle;
 }
 function lalala(array $article):string{
