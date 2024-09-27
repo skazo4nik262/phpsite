@@ -186,27 +186,68 @@ include_once './inc/function.php';
                     </ul>
                 </div>
             </div>
-            <div class="col-12">
-                <div class="card">
-                    <ul>
-                        <?php
-                        print_r(getArticleList());
-                        ?>
-                    </ul>
-                </div>
-            </div>
-
-
         </div>
     </div>
 </section>
+<!--<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <form action="" method="get" class="form-example">
+                    <div class="form-example mb-2">
+                        <label for="first">Enter first number: </label>
+                        <input type="text" name="first" id="fst" required/>
+                    </div>
+                    <select name="operation" class="mb-2">
+                        <option value="plus">+</option>
+                        <option value="minus">-</option>
+                        <option value="multiply">*</option>
+                        <option value="divide">/</option>
+                    </select>
+                    <div class="form-example mb-2">
+                        <label for="second">Enter second number: </label>
+                        <input type="text" name="second" id="sec" required/>
+                    </div>
+                    <div class="form-example">
+                        <input type="submit" value="Sumbit"/>
+                    </div>
+
+                    <div class="form-example">
+                        <label>
+                            <?php
+                                //print_r(calc($_GET["first"], $_GET["second"], $_GET["operation"]))
+                            ?>
+                        </label>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>-->
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <?php
+                    print_r(getArticleList());
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
 
 <footer id="footer">
     <div class="container">
         <div class="row">
             <div class="col-12 text-center">
                 <a href="https://github.com/skazo4nik262" target="_blank" class="btn btn-outline-light"><i
-                            class="icon-github-circled"></i></a>
+                            class="icon-github-circled"></i></a><br>
+                <a href="calculator.php">Калькулятор</a>
             </div>
         </div>
     </div>

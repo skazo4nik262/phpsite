@@ -27,6 +27,8 @@ function goUrl(string $url){
  * функция возвращает масив статей
  * @return array
  */
+
+
 function getArticles() : array
 {
     return json_decode(file_get_contents('db/articles.json'), true);
@@ -63,8 +65,39 @@ function getArticleList(): string
     $articles = getArticles();
     $link = '';
     foreach ($articles as $article) {
-        $link .= '<li class="nav-item m-3"><a class="nav-link" href="index.php?id='. $article['id']. '&image='.$article[image]
-            . '">'. $article['title']. '</a></li>';
+        $link .= '<li class="nav-item m-3"><a class="nav-link" href="index.php?id='. $article['id'].'">'  . $article['title']. '</a></li>';
     }
     return $link;
+}
+
+function calc(string $first, string $second, string $operation): string{
+    $message ='';
+    switch ($operation){
+        case 'plus':
+            $result = (int)$first + (int)$second;
+            $message = $first. ' + '. $second. ' = '. $result;
+            break;
+        case 'minus':
+            $result = (int)$first - (int)$second;
+            $message = $first. ' - '. $second. ' = '. $result;
+            break;
+        case 'multiply':
+            $result = (int)$first * (int)$second;
+            $message = $first. ' * '. $second. ' = '. $result;
+            break;
+        case 'divide':
+            $result = (int)$first / (int)$second;
+            $message = $first. ' / '. $second. ' = '. $result;
+            break;
+    }
+    return (string)$message;
+}
+function editJson(string $title, string $content):array{
+    $json = file_get_contents('db/articles.json');
+    $json = json_decode($json, true);
+    $json['title'] = $title;
+    $json['content'] = $content;
+
+    $newJsonString = json_encode($json);
+    file_put_contents('db/articles.json', $newJsonString);
 }
