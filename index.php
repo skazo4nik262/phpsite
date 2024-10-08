@@ -2,7 +2,7 @@
 // --------- display all errors
 error_reporting(E_ALL);
 ini_set('display_errors', 'on');
-$ID = 0;
+
 // --------------
 include_once './inc/function.php';
 ?>
@@ -21,37 +21,17 @@ include_once './inc/function.php';
 <div class="container">
     <div class="row">
         <div class="col-12">
-            <form action="" method="get" class="m-5">
-                <div class="form-example mb-2">
-                    <label for="title">Enter new title: </label>
-                    <input type="text" name="title" id="fst" required/>
-                </div>
-                <div class="form-example mb-2">
-                    <label for="content">Enter new content: </label>
-                    <input type="text" name="content" id="sec" required/>
-                </div>
-                <div class="form-example">
-                    <input type="submit" value="Update"/>
-                </div>
-                <?php
-                editJson(htmlspecialchars($_GET["title"], $_GET["content"]))
-                ?>
-            </form>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-12">
             <div class="card">
                 <pre>
                 <?php
                 $ID = $_GET["id"];
-                print_r (lalala(getArticleById(htmlspecialchars($_GET["id"]))));
+                print_r(lalala(getArticleById(htmlspecialchars($_GET["id"]))));
                 ?>
                 </pre>
+                <a href="editJson.php?id=<?php echo $_GET["id"]; ?>>Отредактировать статью</a>
             </div>
         </div>
     </div>
-
 </div>
 </body>
 </html>

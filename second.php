@@ -18,7 +18,7 @@ include_once './inc/function.php';
 </head>
 <body>
 <header class="my_topbar">
-    <nav class="navbar navbar-expand-lg bg-body-tertiary my_nav">
+    <nav class="navbar fixed-top navbar-expand-lg bg-body-tertiary my_nav">
         <div class="container-fluid">
             <a class="navbar-brand" href="#footer">
                 <img src="img/logo.svg" alt="123" class="">
@@ -36,13 +36,17 @@ include_once './inc/function.php';
                     <li class="nav-item">
                         <a href="#footer" class="nav-link">Контакты</a>
                     </li>
+
                 </ul>
                 <form class="d-flex" role="search">
+
                     <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Поиск">
                     <button class="btn btn-outline-dark" type="submit">Поиск</button>
                 </form>
             </div>
         </div>
+        <button class="btn my_btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
+                aria-controls="offcanvasExample"></button>
     </nav>
     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
         <div class="offcanvas-header">
@@ -50,11 +54,18 @@ include_once './inc/function.php';
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Закрыть"></button>
         </div>
         <div class="offcanvas-body ">
-            <div/>
-            <a href="index.html">На главную страницу</a>
-        </div>
 
-    </div>
+            <form action="" method="get" class="mt-3">
+                <div class="card">
+                    <ul class="list-group list-group-flush">
+                        <li><a href="index.html" class="list-group-item">На главную страницу</a></li>
+                        <li><a href="?act=calc#footer" class="list-group-item">Калькулятор</a></li>
+                        <li><a href="?act=artlist#footer" class="list-group-item">Список статей</a></li>
+                        <li><a href="?act=addlist#footer" class="list-group-item">Добавить статью</a></li>
+                    </ul>
+                </div>
+            </form>
+        </div>
     </div>
 </header>
 <section class="my_carousel">
@@ -226,21 +237,31 @@ include_once './inc/function.php';
     </div>
 </section>-->
 
-<section>
+<!--<section>
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <div class="card">
                     <?php
-                    print_r(getArticleList());
+                    //print_r(getArticleList());
                     ?>
                 </div>
             </div>
         </div>
     </div>
+</section>-->
+
+<section class="pt-0 updSect">
+    <div class="container">
+        <div class="row">
+            <div class="card">
+            <?php
+            print_r(checkRecuest());
+            ?>
+            </div>
+        </div>
+    </div>
 </section>
-
-
 <footer id="footer">
     <div class="container">
         <div class="row">

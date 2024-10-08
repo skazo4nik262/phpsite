@@ -102,11 +102,15 @@ div.image-shadow {
 .my_body a:hover{
     color: var(--color1);
 }
-
 .card{
     height: 100%;
 }
 .col-md-4, .col-sm-12{
     padding-bottom: 100px;
 }
-
+.updSect a{
+    color: #000;
+}
+.updSect a:hover{
+    color: var(--color1);
+}
