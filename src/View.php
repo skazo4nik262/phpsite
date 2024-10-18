@@ -15,9 +15,12 @@ class View
         $this->loader = new \Twig\Loader\FilesystemLoader($path);
     }
     public function oneArt($content){
-        echo $this->twig->render('oneart.twig', $content);
+        echo $this->twig->render('oneart.twig', compact('content'));
     }
     public function listArts($list){
-        echo $this->twig->render('list.twig', $list);
+        echo $this->twig->render('list.twig',compact('list') );
+    }
+    public function addArt(){
+        echo $this->twig->render('add.twig');
     }
 }

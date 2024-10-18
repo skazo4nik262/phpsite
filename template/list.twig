@@ -1,12 +1,16 @@
-{% extends "second.php" %}
 <section>
     <div class="container">
         <div class="row">
             <div class="col-12">
                 <div class="card">
-                    {% for item in list %}
-                        {{ item|raw }}
-                    {%endfor%}
+                    <ul>
+                            {% for item in list %}
+                                <li class="nav-item m-3">
+                                    <a class="nav-link" href="/article/{{ item.id }} ">{{ item.title}}</a>
+                                </li>
+
+                            {% endfor %}
+                    </ul>
                 </div>
             </div>
         </div>

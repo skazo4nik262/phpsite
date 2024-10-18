@@ -13,13 +13,16 @@ class Controller
         $this->view = new View();
     }
 
-    public function oneArt(){
-        $content = $this->model->oneArt();
+    public function oneArt($id){
+        $content = $this->model->getArticleById($id);
         $this->view->oneArt($content);
     }
     public function listArts(){
-        $list = $this->model->getArticleList();
+        $list = $this->model->getArticles();
         $this->view->listArts($list);
+    }
+    public function addArtForm(){
+        $form = $this->view->addArt();
     }
 
 }

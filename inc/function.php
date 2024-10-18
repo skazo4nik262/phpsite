@@ -3,7 +3,8 @@
 // Включаем строгую типизацию
 declare(strict_types = 1);
 
-namespace App;
+namespace NewApp;
+
 class Func
 {
 
@@ -58,7 +59,7 @@ class Func
         return $curentArticle;
     }
 
-    function lalala(array $article): string
+    function lalala(array $article): array
     {
         //return '<img src =' . "$article[image]" . '>' . '<p>' . "$article[content]" . '</p>' . '<a class="btn" href="?act=artlist>Назад</a>' ;
         return "<img src='$article[image]' alt='Изображение не загрузилось('>
